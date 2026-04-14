@@ -42,7 +42,7 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Heading */}
-        <h1 className="hero-animate hero-animate-delay-2 text-5xl md:text-8xl font-display font-extrabold tracking-tighter mb-6">
+        <h1 className="hero-animate hero-animate-delay-2 text-4xl md:text-6xl font-display font-extrabold tracking-tighter mb-6">
           <span className="gradient-text">{PERSONAL_INFO.name.toUpperCase()}</span>
         </h1>
 

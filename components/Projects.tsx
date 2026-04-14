@@ -364,7 +364,7 @@ const Projects: React.FC = () => {
                 <h3 className="text-xl font-bold font-display mb-3 group-hover:text-amber-400 transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-gray-500 text-sm leading-relaxed line-clamp-3 mb-6">
+                <p className="text-gray-500 text-sm leading-relaxed mb-6">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2">

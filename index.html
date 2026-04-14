@@ -6,12 +6,31 @@
     <title>Cheng-hung Hsieh | Senior Firmware Engineer</title>
     <meta name="description" content="Portfolio of Cheng-hung Hsieh - Senior Firmware Engineer specializing in NR/LTE Protocol Stack and Embedded Systems" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              midnight: '#0a0f1e',
+              surface: '#111827',
+              amber: { 400: '#e2a84b', 500: '#d4973f', 600: '#b8802e' },
+              cyan: { 400: '#22d3ee', 500: '#06b6d4' },
+            },
+            fontFamily: {
+              display: ['Syne', 'sans-serif'],
+              body: ['Outfit', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+          }
+        }
+      }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/index.css" />
   </head>
-  <body class="bg-[#0f172a] text-gray-100 font-['Inter'] antialiased">
+  <body class="bg-midnight text-gray-100 font-body antialiased">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>
