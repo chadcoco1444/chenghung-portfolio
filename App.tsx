@@ -5,7 +5,7 @@ import Projects from './components/Projects';
 import Publications from './components/Publications';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
-import AIChat from './components/AIChat';
+import Contact from './components/Contact';
 import { PERSONAL_INFO } from './constants';
 
 const App: React.FC = () => {
@@ -54,7 +54,7 @@ const App: React.FC = () => {
         <Publications />
         <Experience />
         <Skills />
-        <AIChat />
+        <Contact />
       </main>
 
       <footer className="py-20 border-t border-white/5 text-center text-gray-500 text-sm">

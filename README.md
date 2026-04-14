@@ -8,8 +8,8 @@ Personal portfolio website built with React + TypeScript + Vite.
 
 - Dark theme with glassmorphism design
 - Responsive layout (mobile / tablet / desktop)
-- Sections: Hero, About, Projects, Publications, Experience Timeline, Skills, AI Chat
-- AI Career Assistant powered by Google Gemini API
+- Sections: Hero, About, Projects, Publications, Experience Timeline, Skills, Contact
+- Contact form with email forwarding
 - Deployed to GitHub Pages
 
 ## Tech Stack
@@ -17,7 +17,6 @@ Personal portfolio website built with React + TypeScript + Vite.
 - React 19 + TypeScript
 - Vite
 - Tailwind CSS
-- Google Gemini API (`@google/genai`)
 - GitHub Pages (`gh-pages`)
 
 ## Getting Started
@@ -31,15 +30,6 @@ Personal portfolio website built with React + TypeScript + Vite.
 
 ```bash
 npm install
-```
-
-### Set up Gemini API Key (optional, for AI Chat)
-
-1. Get a free API key from [Google AI Studio](https://aistudio.google.com/apikey)
-2. Create a `.env` file in the project root:
-
-```
-VITE_GEMINI_API_KEY=your_api_key_here
 ```
 
 ### Development
@@ -64,8 +54,6 @@ npm run deploy
 
 This builds the project and pushes the `dist/` folder to the `gh-pages` branch.
 
-> **Note:** To include the Gemini API key in the deployed build, set `VITE_GEMINI_API_KEY` in your environment before running `npm run deploy`.
-
 ## Project Structure
 
 ```
@@ -81,9 +69,7 @@ This builds the project and pushes the `dist/` folder to the `gh-pages` branch.
 │   ├── Publications.tsx  # Publications with PDF download
 │   ├── Experience.tsx    # Timeline layout
 │   ├── Skills.tsx        # Skills category grid
-│   └── AIChat.tsx        # Gemini-powered chat
-├── services/
-│   └── geminiService.ts  # Gemini API wrapper
+│   └── Contact.tsx       # Contact form (mailto)
 └── public/assets/        # Static files (photos, PDFs)
 ```
 

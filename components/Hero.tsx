@@ -62,10 +62,10 @@ const Hero: React.FC = () => {
             Download CV
           </a>
           <a
-            href="#ai-chat"
+            href="#contact"
             className="px-8 py-3 border border-white/10 hover:border-blue-500/50 text-gray-300 hover:text-white rounded-xl font-medium transition-all duration-300"
           >
-            Inquire AI Agent
+            Get In Touch
           </a>
         </div>
       </div>

@@ -32,8 +32,3 @@ export interface Publication {
   award?: string;
   pdf: string;
 }
-
-export interface ChatMessage {
-  role: 'user' | 'assistant';
-  content: string;
-}
