@@ -59,7 +59,7 @@ const App: React.FC = () => {
 
       <footer className="py-20 border-t border-white/5 text-center text-gray-500 text-sm">
         <div className="max-w-7xl mx-auto px-4">
-          <p className="mb-2">&copy; 2026 {PERSONAL_INFO.name} | {PERSONAL_INFO.company}</p>
+          <p className="mb-2">&copy; 2026 {PERSONAL_INFO.name}</p>
           <p className="fira-code text-[10px] opacity-30 uppercase tracking-widest">NR/LTE Protocol Stack / Embedded Systems / Firmware Engineering</p>
         </div>
       </footer>

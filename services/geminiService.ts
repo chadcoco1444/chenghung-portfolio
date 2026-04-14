@@ -13,7 +13,7 @@ export class GeminiService {
 
     try {
       const systemInstruction = `
-You are the AI Career Assistant of ${PERSONAL_INFO.name}, a ${PERSONAL_INFO.title} at ${PERSONAL_INFO.company}.
+You are the AI Career Assistant of ${PERSONAL_INFO.name}, a freelance ${PERSONAL_INFO.title} with 7+ years of experience.
 
 CONTEXT:
 - Name: ${PERSONAL_INFO.name}

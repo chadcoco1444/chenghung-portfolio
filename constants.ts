@@ -3,7 +3,7 @@ import { Project, Experience, SkillCategory, Publication } from './types';
 export const PERSONAL_INFO = {
   name: 'Cheng-hung Hsieh',
   title: 'Senior Firmware Engineer',
-  company: 'MediaTek Inc.',
+  company: 'Freelance',
   location: 'Taipei, Taiwan',
   email: 'chadcoco1444@gmail.com',
   phone: '(+886) 989-365-782',
@@ -50,6 +50,18 @@ export const PROJECTS: Project[] = [
     description: 'Proposed a novel hierarchical parallelism for accelerating network intrusion detection on multiple GPUs. Achieved 70 Gbps throughput (40x faster than Snort AC algorithm) and 99.2% memory reduction. Awarded Best Conference Paper at IEEE ICASI 2018.',
     techStack: ['C/C++', 'CUDA', 'Aho-Corasick', 'GPU', 'Snort'],
   },
+  {
+    id: 7,
+    title: 'Head Unit Display (HUD)',
+    description: 'Developed firmware for automotive Head Unit Display on STM32 (ARM Cortex-M3/A7) platform. Implemented communication interfaces including I2C, SPI, CAN, PWM, and IPC. Debugged using Oscilloscope, Memory Analyzer, and JTAG/SWD interface.',
+    techStack: ['C', 'STM32', 'ARM Cortex-M3/A7', 'CAN', 'SPI', 'IPC'],
+  },
+  {
+    id: 8,
+    title: 'IoT Energy Monitoring System',
+    description: 'Built an IoT-based energy monitoring system using Raspberry Pi, Arduino, and ESP8266. Integrated OpenEnergyMonitor for real-time temperature, humidity, and power consumption monitoring.',
+    techStack: ['Raspberry Pi', 'Arduino', 'ESP8266', 'IoT', 'OpenEnergyMonitor'],
+  },
 ];
 
 export const PUBLICATIONS: Publication[] = [
@@ -68,7 +80,7 @@ export const EXPERIENCES: Experience[] = [
     id: 1,
     company: 'MediaTek Inc.',
     role: 'Senior Firmware Engineer (Protocol Stack)',
-    period: '2021 – Present',
+    period: '2021 – 2025',
     description: [
       'Led development of Terrestrial/Non-Terrestrial Networks (NTN) and 5G RedCap cell selection features based on 3GPP R17',
       'Developed LPP Control Plane and User Plane for positioning features, maintained A-GPS modules',
