@@ -2,6 +2,9 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Projects from './components/Projects';
+import Publications from './components/Publications';
+import Experience from './components/Experience';
+import Skills from './components/Skills';
 import { PERSONAL_INFO } from './constants';
 
 const App: React.FC = () => {
@@ -47,6 +50,9 @@ const App: React.FC = () => {
         </section>
 
         <Projects />
+        <Publications />
+        <Experience />
+        <Skills />
       </main>
 
       <footer className="py-20 border-t border-white/5 text-center text-gray-500 text-sm">
