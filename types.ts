@@ -24,6 +24,15 @@ export interface SkillCategory {
   skills: string[];
 }
 
+export interface OpenSourceProject {
+  id: number;
+  title: string;
+  description: string;
+  techStack: string[];
+  github: string;
+  highlights: string[];
+}
+
 export interface Publication {
   title: string;
   authors: string;

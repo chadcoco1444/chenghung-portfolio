@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Projects from './components/Projects';
+import OpenSource from './components/OpenSource';
 import Publications from './components/Publications';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
@@ -53,6 +54,7 @@ const App: React.FC = () => {
         </section>
 
         <Projects />
+        <OpenSource />
         <Publications />
         <Experience />
         <Skills />

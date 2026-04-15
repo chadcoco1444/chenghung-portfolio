@@ -1,4 +1,4 @@
-import { Project, Experience, SkillCategory, Publication } from './types';
+import { Project, Experience, SkillCategory, Publication, OpenSourceProject } from './types';
 
 export const PERSONAL_INFO = {
   name: 'Cheng-hung Hsieh',
@@ -61,6 +61,36 @@ export const PROJECTS: Project[] = [
     title: 'IoT Energy Monitoring System',
     description: 'Built an IoT-based energy monitoring system using Raspberry Pi, Arduino, and ESP8266. Integrated OpenEnergyMonitor for real-time temperature, humidity, and power consumption monitoring.',
     techStack: ['Raspberry Pi', 'Arduino', 'ESP8266', 'IoT', 'OpenEnergyMonitor'],
+  },
+];
+
+export const OPEN_SOURCE_PROJECTS: OpenSourceProject[] = [
+  {
+    id: 1,
+    title: 'Trading System',
+    description: '台股技術分析 + 基本面交易管理系統，整合 Web 儀表板、Telegram Bot 與自動推播排程。涵蓋三大策略（趨勢 / ICT / 基本面）、全市場 1800+ 檔即時掃描、Walk-forward 回測引擎，以及 Groq AI 驅動的市場情報分析。',
+    techStack: ['Python', 'Flask', 'SQLite', 'Lightweight Charts', 'Chart.js', 'Groq API', 'Telegram Bot'],
+    github: 'https://github.com/chadcoco1444/trading-system',
+    highlights: [
+      '38+ API 端點 · 7 Blueprint 模組',
+      '3 大策略全市場即時掃描',
+      'Walk-forward 回測 + Monte Carlo 信心區間',
+      'Telegram Bot 34 指令 + 盤前/收盤自動推播',
+      '444 個單元測試',
+    ],
+  },
+  {
+    id: 2,
+    title: 'Portfolio',
+    description: '個人作品集網站，採用 React + TypeScript 建構，搭配 Tailwind CSS 實現 Precision Instrument 設計語言。深色玻璃態介面、自製 SVG 插圖、scroll-reveal 動畫效果。',
+    techStack: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
+    github: 'https://github.com/chadcoco1444/chenghung-portfolio',
+    highlights: [
+      'Precision Instrument 設計系統',
+      'Glassmorphism + noise texture 視覺風格',
+      '自製 SVG 技術插圖',
+      'Scroll-reveal 交錯動畫',
+    ],
   },
 ];
 
