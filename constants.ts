@@ -80,6 +80,20 @@ export const OPEN_SOURCE_PROJECTS: OpenSourceProject[] = [
     ],
   },
   {
+    id: 3,
+    title: 'SKILL Platform (AI Pair Programmer)',
+    description: 'An AI-powered algorithm tutor and online judge platform that guides users through Blind 75 interview problems using Socratic dialogue. Built on the SKILL framework (Socratic → Knowledge → Iterative → Logic → Evolution), featuring a conversational UI with inline code editor, real-time execution in Docker sandboxes, and adaptive learning via a knowledge graph.',
+    techStack: ['Next.js 15', 'React 19', 'tRPC v11', 'PostgreSQL', 'Prisma', 'Redis', 'Gemini API', 'Docker', 'BullMQ'],
+    github: 'https://github.com/chadcoco1444/ai-pair-programmer',
+    highlights: [
+      'SKILL tutoring framework — AI never hands out answers',
+      'Blind 75 problem bank (71 problems across 10 categories)',
+      'Multi-language code execution in Docker sandbox (Python, C, C++, JS)',
+      'Adaptive learning path powered by a knowledge graph',
+      'Type-safe end-to-end via tRPC + monorepo architecture',
+    ],
+  },
+  {
     id: 2,
     title: 'Portfolio',
     description: 'Personal portfolio website built with React + TypeScript and Tailwind CSS, featuring a Precision Instrument design language. Dark glassmorphism interface, custom SVG illustrations, and scroll-reveal animations.',

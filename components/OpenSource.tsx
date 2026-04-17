@@ -120,6 +120,123 @@ const PortfolioIllustration: React.FC = () => (
   </svg>
 );
 
+const SkillPlatformIllustration: React.FC = () => (
+  <svg viewBox="0 0 560 220" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="oss-g3" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.2" />
+        <stop offset="100%" stopColor="#22d3ee" stopOpacity="0.08" />
+      </linearGradient>
+      <linearGradient id="oss-g3-accent" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.4" />
+        <stop offset="100%" stopColor="#ec4899" stopOpacity="0.4" />
+      </linearGradient>
+    </defs>
+    <rect width="560" height="220" fill="url(#oss-g3)" />
+
+    {/* Chat conversation bubble (AI tutor) - left */}
+    <g transform="translate(30, 30)">
+      {/* AI avatar */}
+      <circle cx="14" cy="12" r="10" fill="#8b5cf6" opacity="0.25" stroke="#8b5cf6" strokeWidth="1" strokeOpacity="0.5" />
+      <text x="14" y="16" textAnchor="middle" fill="#8b5cf6" fontSize="10" fontWeight="700" fontFamily="monospace" opacity="0.9">AI</text>
+      {/* Socratic question bubble */}
+      <rect x="32" y="2" width="190" height="38" rx="10" fill="#8b5cf6" opacity="0.12" stroke="#8b5cf6" strokeWidth="0.5" strokeOpacity="0.3" />
+      <text x="42" y="17" fill="#c4b5fd" fontSize="8" fontFamily="monospace" opacity="0.7">Before we optimize,</text>
+      <text x="42" y="29" fill="#c4b5fd" fontSize="8" fontFamily="monospace" opacity="0.7">what's the bottleneck?</text>
+    </g>
+
+    {/* User reply bubble - right */}
+    <g transform="translate(220, 75)">
+      <rect x="0" y="0" width="180" height="30" rx="10" fill="#22d3ee" opacity="0.1" stroke="#22d3ee" strokeWidth="0.5" strokeOpacity="0.3" />
+      <text x="10" y="14" fill="#67e8f9" fontSize="8" fontFamily="monospace" opacity="0.7">Maybe nested loops?</text>
+      <text x="10" y="25" fill="#67e8f9" fontSize="8" fontFamily="monospace" opacity="0.5">O(n²) lookup...</text>
+      {/* User avatar */}
+      <circle cx="195" cy="15" r="9" fill="#22d3ee" opacity="0.2" stroke="#22d3ee" strokeWidth="1" strokeOpacity="0.4" />
+      <path d="M 190 15 a 5 5 0 0 1 10 0" fill="#22d3ee" opacity="0.5" />
+      <circle cx="195" cy="12" r="3" fill="#22d3ee" opacity="0.5" />
+    </g>
+
+    {/* Code editor (Monaco-style) embedded */}
+    <g transform="translate(30, 125)">
+      <rect x="0" y="0" width="360" height="80" rx="6" fill="#0b1020" opacity="0.85" stroke="#8b5cf6" strokeWidth="0.5" strokeOpacity="0.3" />
+      {/* Window dots */}
+      <circle cx="12" cy="12" r="2.5" fill="#ef4444" opacity="0.4" />
+      <circle cx="22" cy="12" r="2.5" fill="#f59e0b" opacity="0.4" />
+      <circle cx="32" cy="12" r="2.5" fill="#10b981" opacity="0.4" />
+      {/* Language tab */}
+      <text x="300" y="15" fill="#22d3ee" fontSize="8" fontFamily="monospace" opacity="0.4">PYTHON</text>
+      {/* Line numbers */}
+      <text x="8" y="34" fill="#64748b" fontSize="7" fontFamily="monospace" opacity="0.5">1</text>
+      <text x="8" y="46" fill="#64748b" fontSize="7" fontFamily="monospace" opacity="0.5">2</text>
+      <text x="8" y="58" fill="#64748b" fontSize="7" fontFamily="monospace" opacity="0.5">3</text>
+      <text x="8" y="70" fill="#64748b" fontSize="7" fontFamily="monospace" opacity="0.5">4</text>
+      {/* Syntax highlighted code */}
+      <text x="22" y="34" fill="#ec4899" fontSize="8" fontFamily="monospace" opacity="0.75">def</text>
+      <text x="40" y="34" fill="#60a5fa" fontSize="8" fontFamily="monospace" opacity="0.75">twoSum</text>
+      <text x="72" y="34" fill="#cbd5e1" fontSize="8" fontFamily="monospace" opacity="0.6">(nums, target):</text>
+      <text x="30" y="46" fill="#ec4899" fontSize="8" fontFamily="monospace" opacity="0.75">seen</text>
+      <text x="55" y="46" fill="#cbd5e1" fontSize="8" fontFamily="monospace" opacity="0.6">=</text>
+      <text x="63" y="46" fill="#fbbf24" fontSize="8" fontFamily="monospace" opacity="0.75">{'{}'}</text>
+      <text x="30" y="58" fill="#ec4899" fontSize="8" fontFamily="monospace" opacity="0.75">for</text>
+      <text x="48" y="58" fill="#cbd5e1" fontSize="8" fontFamily="monospace" opacity="0.6">i, n</text>
+      <text x="72" y="58" fill="#ec4899" fontSize="8" fontFamily="monospace" opacity="0.75">in</text>
+      <text x="86" y="58" fill="#60a5fa" fontSize="8" fontFamily="monospace" opacity="0.75">enumerate</text>
+      <text x="132" y="58" fill="#cbd5e1" fontSize="8" fontFamily="monospace" opacity="0.6">(nums):</text>
+      <text x="38" y="70" fill="#ec4899" fontSize="8" fontFamily="monospace" opacity="0.75">if</text>
+      <text x="50" y="70" fill="#cbd5e1" fontSize="8" fontFamily="monospace" opacity="0.6">target - n </text>
+      <text x="104" y="70" fill="#ec4899" fontSize="8" fontFamily="monospace" opacity="0.75">in</text>
+      <text x="116" y="70" fill="#cbd5e1" fontSize="8" fontFamily="monospace" opacity="0.6">seen:</text>
+      {/* Cursor blink */}
+      <rect x="145" y="64" width="1" height="8" fill="#22d3ee" opacity="0.8" />
+    </g>
+
+    {/* Run result badge */}
+    <g transform="translate(400, 130)">
+      <rect x="0" y="0" width="135" height="32" rx="6" fill="#10b981" opacity="0.1" stroke="#10b981" strokeWidth="0.5" strokeOpacity="0.3" />
+      <circle cx="14" cy="16" r="6" fill="#10b981" opacity="0.2" />
+      <path d="M 10 16 L 13 19 L 18 13" fill="none" stroke="#10b981" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.7" />
+      <text x="26" y="13" fill="#10b981" fontSize="8" fontFamily="monospace" opacity="0.7">ACCEPTED</text>
+      <text x="26" y="24" fill="#10b981" fontSize="7" fontFamily="monospace" opacity="0.45">O(n) · 44ms</text>
+    </g>
+
+    {/* Knowledge graph nodes (right side) */}
+    <g transform="translate(410, 175)">
+      <circle cx="0" cy="0" r="8" fill="#ec4899" opacity="0.25" stroke="#ec4899" strokeWidth="0.8" strokeOpacity="0.5" />
+      <circle cx="30" cy="-5" r="6" fill="#8b5cf6" opacity="0.2" stroke="#8b5cf6" strokeWidth="0.8" strokeOpacity="0.4" />
+      <circle cx="55" cy="8" r="6" fill="#22d3ee" opacity="0.2" stroke="#22d3ee" strokeWidth="0.8" strokeOpacity="0.4" />
+      <circle cx="85" cy="-2" r="5" fill="#10b981" opacity="0.2" stroke="#10b981" strokeWidth="0.8" strokeOpacity="0.4" />
+      <circle cx="115" cy="6" r="5" fill="#f59e0b" opacity="0.15" stroke="#f59e0b" strokeWidth="0.8" strokeOpacity="0.3" />
+      <line x1="8" y1="-1" x2="24" y2="-4" stroke="#ec4899" strokeWidth="0.8" opacity="0.3" />
+      <line x1="36" y1="-3" x2="50" y2="5" stroke="#8b5cf6" strokeWidth="0.8" opacity="0.3" />
+      <line x1="61" y1="6" x2="80" y2="-1" stroke="#22d3ee" strokeWidth="0.8" opacity="0.3" />
+      <line x1="90" y1="-1" x2="110" y2="4" stroke="#10b981" strokeWidth="0.8" opacity="0.3" />
+    </g>
+
+    {/* SKILL framework label */}
+    <g opacity="0.55">
+      <rect x="405" y="30" width="130" height="62" rx="6" fill="#0b1020" opacity="0.5" stroke="#8b5cf6" strokeWidth="0.5" strokeOpacity="0.25" />
+      <text x="415" y="45" fill="#a78bfa" fontSize="8" fontWeight="700" fontFamily="monospace" opacity="0.8">SKILL</text>
+      <text x="415" y="56" fill="#c4b5fd" fontSize="6.5" fontFamily="monospace" opacity="0.55">S · Socratic</text>
+      <text x="415" y="65" fill="#c4b5fd" fontSize="6.5" fontFamily="monospace" opacity="0.55">K · Knowledge</text>
+      <text x="415" y="74" fill="#c4b5fd" fontSize="6.5" fontFamily="monospace" opacity="0.55">I · Iterative</text>
+      <text x="415" y="83" fill="#c4b5fd" fontSize="6.5" fontFamily="monospace" opacity="0.55">L · Logic / Evolve</text>
+    </g>
+
+    {/* Background sparkle */}
+    <g opacity="0.2">
+      <circle cx="250" cy="18" r="1.5" fill="#ec4899" />
+      <circle cx="460" cy="108" r="1.2" fill="#8b5cf6" />
+      <circle cx="20" cy="205" r="1.2" fill="#22d3ee" />
+    </g>
+  </svg>
+);
+
+const ILLUSTRATION_MAP: Record<number, React.FC> = {
+  1: TradingSystemIllustration,
+  2: PortfolioIllustration,
+  3: SkillPlatformIllustration,
+};
+
 const OpenSource: React.FC = () => {
   return (
     <section id="opensource" className="py-32 px-4 relative">
@@ -143,7 +260,10 @@ const OpenSource: React.FC = () => {
               <div className="flex flex-col lg:flex-row">
                 {/* Illustration */}
                 <div className="relative lg:w-[45%] h-56 lg:h-auto overflow-hidden flex-shrink-0">
-                  {project.id === 1 ? <TradingSystemIllustration /> : <PortfolioIllustration />}
+                  {(() => {
+                    const Illustration = ILLUSTRATION_MAP[project.id] ?? PortfolioIllustration;
+                    return <Illustration />;
+                  })()}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-slate-900/80 hidden lg:block"></div>
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent lg:hidden"></div>
                 </div>
