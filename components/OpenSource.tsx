@@ -231,10 +231,159 @@ const SkillPlatformIllustration: React.FC = () => (
   </svg>
 );
 
+const CrawlCastIllustration: React.FC = () => (
+  <svg viewBox="0 0 560 220" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="oss-g4" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#f43f5e" stopOpacity="0.22" />
+        <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0.08" />
+      </linearGradient>
+      <linearGradient id="oss-g4-screen" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stopColor="#1e293b" stopOpacity="0.95" />
+        <stop offset="100%" stopColor="#0f172a" stopOpacity="0.95" />
+      </linearGradient>
+      <radialGradient id="oss-g4-spot" cx="50%" cy="30%" r="60%">
+        <stop offset="0%" stopColor="#f43f5e" stopOpacity="0.18" />
+        <stop offset="100%" stopColor="#f43f5e" stopOpacity="0" />
+      </radialGradient>
+    </defs>
+    <rect width="560" height="220" fill="url(#oss-g4)" />
+    <rect width="560" height="220" fill="url(#oss-g4-spot)" />
+
+    {/* URL input bar (top left) */}
+    <g transform="translate(30, 22)">
+      <rect x="0" y="0" width="180" height="22" rx="11" fill="#0b1020" opacity="0.75" stroke="#f43f5e" strokeWidth="0.5" strokeOpacity="0.35" />
+      <circle cx="12" cy="11" r="3" fill="#f43f5e" opacity="0.55" />
+      <text x="22" y="14" fill="#fb7185" fontSize="8" fontFamily="monospace" opacity="0.75">https://your-saas.com</text>
+      <rect x="152" y="4" width="22" height="14" rx="3" fill="#f43f5e" opacity="0.4" />
+      <path d="M 159 11 L 165 11 M 162 8 L 165 11 L 162 14" stroke="#fff" strokeWidth="1" fill="none" strokeLinecap="round" strokeLinejoin="round" opacity="0.9" />
+    </g>
+
+    {/* Pipeline arrows */}
+    <g opacity="0.5">
+      <path d="M 215 33 L 240 33" stroke="#f43f5e" strokeWidth="1" strokeDasharray="3 3" />
+      <path d="M 238 30 L 243 33 L 238 36" stroke="#f43f5e" strokeWidth="1" fill="none" />
+    </g>
+
+    {/* Three pipeline modules: Planner → Actor → Renderer */}
+    <g transform="translate(245, 18)">
+      {/* Planner */}
+      <rect x="0" y="0" width="90" height="30" rx="6" fill="#8b5cf6" opacity="0.12" stroke="#8b5cf6" strokeWidth="0.6" strokeOpacity="0.4" />
+      <circle cx="12" cy="15" r="5" fill="#8b5cf6" opacity="0.3" />
+      <path d="M 9 15 L 11 17 L 15 13" stroke="#c4b5fd" strokeWidth="1.2" fill="none" strokeLinecap="round" strokeLinejoin="round" opacity="0.9" />
+      <text x="22" y="13" fill="#c4b5fd" fontSize="7" fontWeight="700" fontFamily="monospace" opacity="0.85">PLANNER</text>
+      <text x="22" y="23" fill="#c4b5fd" fontSize="6" fontFamily="monospace" opacity="0.55">LLM · shot script</text>
+      {/* arrow */}
+      <path d="M 93 15 L 100 15" stroke="#8b5cf6" strokeWidth="1" opacity="0.5" />
+      <path d="M 98 13 L 101 15 L 98 17" stroke="#8b5cf6" strokeWidth="1" fill="none" opacity="0.5" />
+
+      {/* Actor */}
+      <rect x="103" y="0" width="90" height="30" rx="6" fill="#22d3ee" opacity="0.12" stroke="#22d3ee" strokeWidth="0.6" strokeOpacity="0.4" />
+      {/* cursor icon */}
+      <path d="M 112 10 L 112 20 L 115 17 L 118 23 L 120 22 L 117 16 L 121 15 Z" fill="#22d3ee" opacity="0.6" />
+      <text x="125" y="13" fill="#67e8f9" fontSize="7" fontWeight="700" fontFamily="monospace" opacity="0.85">ACTOR</text>
+      <text x="125" y="23" fill="#67e8f9" fontSize="6" fontFamily="monospace" opacity="0.55">Playwright · stealth</text>
+      {/* arrow */}
+      <path d="M 196 15 L 203 15" stroke="#22d3ee" strokeWidth="1" opacity="0.5" />
+      <path d="M 201 13 L 204 15 L 201 17" stroke="#22d3ee" strokeWidth="1" fill="none" opacity="0.5" />
+
+      {/* Renderer */}
+      <rect x="206" y="0" width="90" height="30" rx="6" fill="#f43f5e" opacity="0.12" stroke="#f43f5e" strokeWidth="0.6" strokeOpacity="0.4" />
+      {/* film strip icon */}
+      <rect x="213" y="9" width="14" height="12" rx="1" fill="none" stroke="#fb7185" strokeWidth="0.8" opacity="0.75" />
+      <rect x="213" y="9" width="14" height="2" fill="#fb7185" opacity="0.5" />
+      <rect x="213" y="19" width="14" height="2" fill="#fb7185" opacity="0.5" />
+      <text x="232" y="13" fill="#fb7185" fontSize="7" fontWeight="700" fontFamily="monospace" opacity="0.85">RENDERER</text>
+      <text x="232" y="23" fill="#fb7185" fontSize="6" fontFamily="monospace" opacity="0.55">Remotion · MP4</text>
+    </g>
+
+    {/* MacBook frame with the final video */}
+    <g transform="translate(115, 72)">
+      {/* MacBook body */}
+      <rect x="0" y="0" width="330" height="110" rx="8" fill="#1e293b" stroke="#475569" strokeWidth="1" opacity="0.85" />
+      {/* bezel */}
+      <rect x="6" y="6" width="318" height="92" rx="3" fill="url(#oss-g4-screen)" />
+      {/* camera notch */}
+      <circle cx="165" cy="10" r="1.2" fill="#0b1020" />
+      {/* hinge bar */}
+      <rect x="-18" y="108" width="366" height="6" rx="3" fill="#334155" opacity="0.9" />
+      <rect x="-18" y="108" width="366" height="2" rx="1" fill="#0f172a" opacity="0.6" />
+      {/* base curve */}
+      <rect x="145" y="114" width="40" height="3" rx="1.5" fill="#1e293b" opacity="0.8" />
+
+      {/* Screen content: mock webpage preview */}
+      {/* top browser bar */}
+      <rect x="14" y="14" width="302" height="10" rx="2" fill="#0b1020" opacity="0.7" />
+      <circle cx="20" cy="19" r="1.6" fill="#ef4444" opacity="0.45" />
+      <circle cx="26" cy="19" r="1.6" fill="#f59e0b" opacity="0.45" />
+      <circle cx="32" cy="19" r="1.6" fill="#10b981" opacity="0.45" />
+      <rect x="45" y="16" width="260" height="6" rx="3" fill="#ffffff" opacity="0.05" />
+
+      {/* landing hero mock */}
+      <rect x="22" y="32" width="150" height="10" rx="2" fill="#f43f5e" opacity="0.4" />
+      <rect x="22" y="46" width="220" height="5" rx="1.5" fill="#ffffff" opacity="0.1" />
+      <rect x="22" y="55" width="180" height="5" rx="1.5" fill="#ffffff" opacity="0.08" />
+      <rect x="22" y="68" width="70" height="18" rx="4" fill="#f43f5e" opacity="0.55" />
+      <text x="57" y="80" textAnchor="middle" fill="#fff" fontSize="7" fontWeight="700" fontFamily="monospace" opacity="0.9">START →</text>
+
+      {/* floating cursor / zoom target */}
+      <circle cx="70" cy="77" r="14" fill="none" stroke="#22d3ee" strokeWidth="1" opacity="0.6" strokeDasharray="2 3" />
+      <circle cx="70" cy="77" r="22" fill="none" stroke="#22d3ee" strokeWidth="0.6" opacity="0.35" />
+      <path d="M 68 72 L 68 83 L 71 80 L 74 86 L 76 85 L 73 79 L 77 78 Z" fill="#fff" opacity="0.85" />
+
+      {/* mock image placeholder right side */}
+      <rect x="250" y="32" width="56" height="40" rx="3" fill="#8b5cf6" opacity="0.18" stroke="#8b5cf6" strokeWidth="0.4" strokeOpacity="0.35" />
+      <circle cx="263" cy="45" r="3" fill="#8b5cf6" opacity="0.5" />
+      <path d="M 255 65 L 265 56 L 274 62 L 285 52 L 300 68 L 255 68 Z" fill="#8b5cf6" opacity="0.3" />
+
+      {/* caption bar (auto captions) */}
+      <rect x="65" y="88" width="200" height="8" rx="2" fill="#0b1020" opacity="0.8" />
+      <text x="165" y="94" textAnchor="middle" fill="#fff" fontSize="5.5" fontFamily="monospace" opacity="0.8">“Click to start your free trial”</text>
+    </g>
+
+    {/* Transport controls below MacBook */}
+    <g transform="translate(190, 195)">
+      {/* play */}
+      <circle cx="0" cy="0" r="7" fill="#f43f5e" opacity="0.28" stroke="#f43f5e" strokeWidth="0.8" strokeOpacity="0.6" />
+      <path d="M -2 -3 L -2 3 L 3 0 Z" fill="#fb7185" opacity="0.95" />
+      {/* timeline */}
+      <rect x="14" y="-2" width="170" height="4" rx="2" fill="#ffffff" opacity="0.08" />
+      <rect x="14" y="-2" width="65" height="4" rx="2" fill="#f43f5e" opacity="0.55" />
+      <circle cx="79" cy="0" r="3" fill="#fb7185" opacity="0.95" />
+      {/* time */}
+      <text x="188" y="3" fill="#fb7185" fontSize="7" fontFamily="monospace" opacity="0.65">0:18 / 0:60</text>
+    </g>
+
+    {/* SLA / export badges (right side) */}
+    <g transform="translate(465, 22)">
+      <rect x="0" y="0" width="70" height="26" rx="6" fill="#10b981" opacity="0.12" stroke="#10b981" strokeWidth="0.5" strokeOpacity="0.35" />
+      <text x="35" y="12" textAnchor="middle" fill="#6ee7b7" fontSize="7" fontWeight="700" fontFamily="monospace" opacity="0.85">~3 MIN</text>
+      <text x="35" y="21" textAnchor="middle" fill="#6ee7b7" fontSize="6" fontFamily="monospace" opacity="0.55">HD RENDER</text>
+    </g>
+    <g transform="translate(465, 54)">
+      <rect x="0" y="0" width="70" height="22" rx="6" fill="#8b5cf6" opacity="0.12" stroke="#8b5cf6" strokeWidth="0.5" strokeOpacity="0.35" />
+      <text x="35" y="14" textAnchor="middle" fill="#c4b5fd" fontSize="7" fontWeight="700" fontFamily="monospace" opacity="0.85">.MP4</text>
+    </g>
+    <g transform="translate(465, 82)">
+      <rect x="0" y="0" width="70" height="22" rx="6" fill="#22d3ee" opacity="0.12" stroke="#22d3ee" strokeWidth="0.5" strokeOpacity="0.35" />
+      <text x="35" y="14" textAnchor="middle" fill="#67e8f9" fontSize="7" fontWeight="700" fontFamily="monospace" opacity="0.85">EMBED</text>
+    </g>
+
+    {/* Subtle floating particles */}
+    <g opacity="0.25">
+      <circle cx="30" cy="130" r="1.5" fill="#f43f5e" />
+      <circle cx="60" cy="180" r="1.1" fill="#8b5cf6" />
+      <circle cx="500" cy="200" r="1.3" fill="#22d3ee" />
+      <circle cx="520" cy="155" r="1.1" fill="#fb7185" />
+    </g>
+  </svg>
+);
+
 const ILLUSTRATION_MAP: Record<number, React.FC> = {
   1: TradingSystemIllustration,
   2: PortfolioIllustration,
   3: SkillPlatformIllustration,
+  4: CrawlCastIllustration,
 };
 
 const OpenSource: React.FC = () => {

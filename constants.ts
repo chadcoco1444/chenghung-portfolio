@@ -66,6 +66,20 @@ export const PROJECTS: Project[] = [
 
 export const OPEN_SOURCE_PROJECTS: OpenSourceProject[] = [
   {
+    id: 4,
+    title: 'CrawlCast',
+    description: 'Turn any URL into a cinematic, Twitter-ready product demo video in about three minutes. Autonomous AI Planner reads the page and scripts the shots, a Playwright Actor operates the site with human-like mouse and scroll, and a Remotion Renderer composites it into a MacBook frame with dynamic zoom and auto captions — no screen recording required.',
+    techStack: ['Next.js 14', 'TypeScript', 'Playwright', 'Remotion', 'BullMQ', 'Prisma', 'PostgreSQL', 'Supabase', 'Claude API'],
+    github: 'https://github.com/chadcoco1444/CrawlCast',
+    highlights: [
+      'Autonomous Planner — LLM-generated shot scripts from live DOM',
+      'Stealth Actor with Bezier mouse + smooth scroll + video capture',
+      'Remotion Renderer — MacBook frame, dynamic zoom, auto captions',
+      '~30s low-fi preview · 2–3 min full HD render',
+      'Pluggable module boundaries via typed JSON artifacts (Zod)',
+    ],
+  },
+  {
     id: 1,
     title: 'Trading System',
     description: 'A full-featured Taiwan stock technical analysis and fundamental trading management system, integrating a Web dashboard, Telegram Bot, and automated push notifications. Covers three strategies (Trend / ICT / Fundamental), real-time scanning of 1800+ stocks, a walk-forward backtesting engine, and Groq AI-powered market intelligence.',
