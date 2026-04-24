@@ -231,7 +231,7 @@ const SkillPlatformIllustration: React.FC = () => (
   </svg>
 );
 
-const CrawlCastIllustration: React.FC = () => (
+const PromptDemoIllustration: React.FC = () => (
   <svg viewBox="0 0 560 220" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <linearGradient id="oss-g4" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -265,24 +265,27 @@ const CrawlCastIllustration: React.FC = () => (
       <path d="M 238 30 L 243 33 L 238 36" stroke="#f43f5e" strokeWidth="1" fill="none" />
     </g>
 
-    {/* Three pipeline modules: Planner → Actor → Renderer */}
+    {/* Three pipeline modules: Crawler → Storyboard → Renderer */}
     <g transform="translate(245, 18)">
-      {/* Planner */}
+      {/* Crawler */}
       <rect x="0" y="0" width="90" height="30" rx="6" fill="#8b5cf6" opacity="0.12" stroke="#8b5cf6" strokeWidth="0.6" strokeOpacity="0.4" />
-      <circle cx="12" cy="15" r="5" fill="#8b5cf6" opacity="0.3" />
-      <path d="M 9 15 L 11 17 L 15 13" stroke="#c4b5fd" strokeWidth="1.2" fill="none" strokeLinecap="round" strokeLinejoin="round" opacity="0.9" />
-      <text x="22" y="13" fill="#c4b5fd" fontSize="7" fontWeight="700" fontFamily="monospace" opacity="0.85">PLANNER</text>
-      <text x="22" y="23" fill="#c4b5fd" fontSize="6" fontFamily="monospace" opacity="0.55">LLM · shot script</text>
+      {/* spider/web icon */}
+      <circle cx="12" cy="15" r="5" fill="none" stroke="#c4b5fd" strokeWidth="0.8" opacity="0.75" />
+      <path d="M 12 10 L 12 20 M 7 15 L 17 15 M 8.5 11.5 L 15.5 18.5 M 15.5 11.5 L 8.5 18.5" stroke="#c4b5fd" strokeWidth="0.5" opacity="0.6" />
+      <text x="22" y="13" fill="#c4b5fd" fontSize="7" fontWeight="700" fontFamily="monospace" opacity="0.85">CRAWLER</text>
+      <text x="22" y="23" fill="#c4b5fd" fontSize="6" fontFamily="monospace" opacity="0.55">DOM · screenshots</text>
       {/* arrow */}
       <path d="M 93 15 L 100 15" stroke="#8b5cf6" strokeWidth="1" opacity="0.5" />
       <path d="M 98 13 L 101 15 L 98 17" stroke="#8b5cf6" strokeWidth="1" fill="none" opacity="0.5" />
 
-      {/* Actor */}
+      {/* Storyboard */}
       <rect x="103" y="0" width="90" height="30" rx="6" fill="#22d3ee" opacity="0.12" stroke="#22d3ee" strokeWidth="0.6" strokeOpacity="0.4" />
-      {/* cursor icon */}
-      <path d="M 112 10 L 112 20 L 115 17 L 118 23 L 120 22 L 117 16 L 121 15 Z" fill="#22d3ee" opacity="0.6" />
-      <text x="125" y="13" fill="#67e8f9" fontSize="7" fontWeight="700" fontFamily="monospace" opacity="0.85">ACTOR</text>
-      <text x="125" y="23" fill="#67e8f9" fontSize="6" fontFamily="monospace" opacity="0.55">Playwright · stealth</text>
+      {/* storyboard frames icon */}
+      <rect x="110" y="11" width="5" height="8" rx="0.5" fill="none" stroke="#67e8f9" strokeWidth="0.7" opacity="0.7" />
+      <rect x="116.5" y="11" width="5" height="8" rx="0.5" fill="#67e8f9" opacity="0.25" stroke="#67e8f9" strokeWidth="0.7" strokeOpacity="0.7" />
+      <rect x="123" y="11" width="5" height="8" rx="0.5" fill="none" stroke="#67e8f9" strokeWidth="0.7" opacity="0.7" />
+      <text x="132" y="13" fill="#67e8f9" fontSize="7" fontWeight="700" fontFamily="monospace" opacity="0.85">STORYBOARD</text>
+      <text x="132" y="23" fill="#67e8f9" fontSize="6" fontFamily="monospace" opacity="0.55">LLM · scenes</text>
       {/* arrow */}
       <path d="M 196 15 L 203 15" stroke="#22d3ee" strokeWidth="1" opacity="0.5" />
       <path d="M 201 13 L 204 15 L 201 17" stroke="#22d3ee" strokeWidth="1" fill="none" opacity="0.5" />
@@ -383,7 +386,7 @@ const ILLUSTRATION_MAP: Record<number, React.FC> = {
   1: TradingSystemIllustration,
   2: PortfolioIllustration,
   3: SkillPlatformIllustration,
-  4: CrawlCastIllustration,
+  4: PromptDemoIllustration,
 };
 
 const OpenSource: React.FC = () => {

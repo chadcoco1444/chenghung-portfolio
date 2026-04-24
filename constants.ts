@@ -67,16 +67,17 @@ export const PROJECTS: Project[] = [
 export const OPEN_SOURCE_PROJECTS: OpenSourceProject[] = [
   {
     id: 4,
-    title: 'CrawlCast',
-    description: 'Turn any URL into a cinematic, Twitter-ready product demo video in about three minutes. Autonomous AI Planner reads the page and scripts the shots, a Playwright Actor operates the site with human-like mouse and scroll, and a Remotion Renderer composites it into a MacBook frame with dynamic zoom and auto captions — no screen recording required.',
-    techStack: ['Next.js 14', 'TypeScript', 'Playwright', 'Remotion', 'BullMQ', 'Prisma', 'PostgreSQL', 'Supabase', 'Claude API'],
-    github: 'https://github.com/chadcoco1444/CrawlCast',
+    title: 'PromptDemo',
+    description: 'Turn any URL into a 10 / 30 / 60-second demo video authored from the page\'s own copy and screenshots. Playwright crawls the page, Claude Sonnet 4.6 writes the storyboard (gated by a 7-layer defense that rejects anything Claude invents), and Remotion renders the MP4. Bilingual EN / 中 intent presets, Google OAuth history, dark/light/system theme, and one-command local dev — 268+ tests passing.',
+    techStack: ['Next.js 14', 'Fastify 5', 'TypeScript', 'BullMQ', 'Redis', 'Playwright', 'Remotion 4', 'Claude Sonnet 4.6', 'NextAuth v5', 'PostgreSQL', 'S3 / MinIO'],
+    github: 'https://github.com/chadcoco1444/PromptDemo',
     highlights: [
-      'Autonomous Planner — LLM-generated shot scripts from live DOM',
-      'Stealth Actor with Bezier mouse + smooth scroll + video capture',
-      'Remotion Renderer — MacBook frame, dynamic zoom, auto captions',
-      '~30s low-fi preview · 2–3 min full HD render',
-      'Pluggable module boundaries via typed JSON artifacts (Zod)',
+      'Three-stage BullMQ pipeline: Crawler → Storyboard → Renderer (per-stage concurrency caps)',
+      '4 FeatureCallout variants: real screenshot · Ken Burns pan+zoom · 3-up collage · dashboard fallback',
+      '5 bilingual intent presets (EN / 中) with dedup against re-click stuffing',
+      '7-layer Claude output defense — extractive whitelist rejects any invented copy',
+      'Google OAuth + history; regenerate-with-hint skips the crawl stage entirely',
+      '268+ tests across 5 workspaces · one-command local dev via `pnpm demo start`',
     ],
   },
   {
