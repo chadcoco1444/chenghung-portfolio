@@ -14,68 +14,208 @@ const ExternalLinkIcon: React.FC<{ className?: string }> = ({ className }) => (
   </svg>
 );
 
-const TradingSystemIllustration: React.FC = () => (
+const GlobeIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} xmlns="http://www.w3.org/2000/svg">
+    <circle cx="12" cy="12" r="10" />
+    <path d="M2 12h20" />
+    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+  </svg>
+);
+
+const TradeMatrixIllustration: React.FC = () => (
   <svg viewBox="0 0 560 220" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
     <defs>
-      <linearGradient id="oss-g1" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#10b981" stopOpacity="0.2" />
-        <stop offset="100%" stopColor="#e2a84b" stopOpacity="0.08" />
+      <linearGradient id="oss-g5" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#0ea5e9" stopOpacity="0.18" />
+        <stop offset="100%" stopColor="#10b981" stopOpacity="0.07" />
       </linearGradient>
     </defs>
-    <rect width="560" height="220" fill="url(#oss-g1)" />
-    {/* Candlestick chart */}
-    {[
-      { x: 60, o: 140, c: 100, h: 85, l: 155, up: true },
-      { x: 85, o: 110, c: 130, h: 95, l: 145, up: false },
-      { x: 110, o: 125, c: 95, h: 80, l: 140, up: true },
-      { x: 135, o: 100, c: 80, h: 65, l: 115, up: true },
-      { x: 160, o: 85, c: 105, h: 70, l: 120, up: false },
-      { x: 185, o: 100, c: 75, h: 60, l: 115, up: true },
-      { x: 210, o: 80, c: 60, h: 45, l: 95, up: true },
-      { x: 235, o: 65, c: 85, h: 50, l: 100, up: false },
-      { x: 260, o: 80, c: 55, h: 40, l: 95, up: true },
-      { x: 285, o: 60, c: 75, h: 45, l: 90, up: false },
-      { x: 310, o: 70, c: 50, h: 35, l: 85, up: true },
-      { x: 335, o: 55, c: 70, h: 40, l: 85, up: false },
-    ].map((c, i) => (
-      <React.Fragment key={`candle-${i}`}>
-        <line x1={c.x} y1={c.h} x2={c.x} y2={c.l} stroke={c.up ? '#10b981' : '#ef4444'} strokeWidth="1" opacity="0.5" />
-        <rect x={c.x - 8} y={Math.min(c.o, c.c)} width="16" height={Math.abs(c.o - c.c) || 2} rx="1" fill={c.up ? '#10b981' : '#ef4444'} opacity={c.up ? 0.35 : 0.3} />
-      </React.Fragment>
-    ))}
-    {/* EMA lines */}
-    <polyline points="60,130 85,118 110,108 135,92 160,95 185,88 210,72 235,76 260,68 285,70 310,58 335,62" fill="none" stroke="#f97316" strokeWidth="1.5" opacity="0.4" />
-    <polyline points="60,138 85,128 110,118 135,105 160,108 185,100 210,88 235,90 260,82 285,85 310,75 335,78" fill="none" stroke="#3b82f6" strokeWidth="1.5" opacity="0.4" />
-    {/* Strategy signals */}
-    <g opacity="0.5">
-      <polygon points="135,150 130,160 140,160" fill="#10b981" />
-      <polygon points="210,90 205,100 215,100" fill="#10b981" />
-      <polygon points="310,80 305,90 315,90" fill="#10b981" />
+    <rect width="560" height="220" fill="url(#oss-g5)" />
+
+    {/* TAIEX index ticker */}
+    <g transform="translate(28, 20)">
+      <rect x="0" y="0" width="150" height="24" rx="6" fill="#0b1020" opacity="0.7" stroke="#10b981" strokeWidth="0.5" strokeOpacity="0.3" />
+      <text x="10" y="16" fill="#94a3b8" fontSize="8" fontFamily="monospace" opacity="0.7">TAIEX</text>
+      <text x="52" y="16" fill="#34d399" fontSize="9" fontWeight="700" fontFamily="monospace" opacity="0.85">22,418</text>
+      <path d="M 110 14 L 116 8 L 122 14 Z" fill="#34d399" opacity="0.7" />
+      <text x="126" y="16" fill="#34d399" fontSize="8" fontFamily="monospace" opacity="0.7">+1.2%</text>
     </g>
-    {/* Dashboard panel */}
-    <rect x="380" y="25" width="155" height="170" rx="8" fill="#0f172a" opacity="0.6" stroke="#10b981" strokeWidth="1" strokeOpacity="0.2" />
-    <text x="400" y="50" fill="#10b981" fontSize="9" fontFamily="monospace" opacity="0.6">SCANNER</text>
-    <rect x="395" y="60" width="60" height="18" rx="3" fill="#10b981" opacity="0.1" />
-    <text x="405" y="73" fill="#10b981" fontSize="8" fontFamily="monospace" opacity="0.5">TREND</text>
-    <rect x="395" y="84" width="60" height="18" rx="3" fill="#3b82f6" opacity="0.1" />
-    <text x="405" y="97" fill="#3b82f6" fontSize="8" fontFamily="monospace" opacity="0.5">ICT</text>
-    <rect x="395" y="108" width="60" height="18" rx="3" fill="#e2a84b" opacity="0.1" />
-    <text x="405" y="121" fill="#e2a84b" fontSize="8" fontFamily="monospace" opacity="0.5">FUND</text>
-    {/* Stats */}
-    <text x="470" y="73" fill="#10b981" fontSize="8" fontFamily="monospace" opacity="0.4">1800+</text>
-    <text x="470" y="97" fill="#3b82f6" fontSize="8" fontFamily="monospace" opacity="0.4">7 SIG</text>
-    <text x="470" y="121" fill="#e2a84b" fontSize="8" fontFamily="monospace" opacity="0.4">5 SIG</text>
-    {/* Telegram icon */}
-    <g transform="translate(425, 155)" opacity="0.3">
-      <path d="M0 8L3 14L5 9L14 2L0 8Z" fill="#22d3ee" />
-      <path d="M3 14L4 10L5 9L3 14Z" fill="#0ea5e9" />
+
+    {/* Institutional flow panel — diverging net buy/sell bars */}
+    <g transform="translate(28, 56)">
+      <text x="0" y="8" fill="#7dd3fc" fontSize="8" fontWeight="700" fontFamily="monospace" opacity="0.7">INSTITUTIONAL FLOW</text>
+      {/* center axis */}
+      <line x1="78" y1="16" x2="78" y2="104" stroke="#475569" strokeWidth="0.75" opacity="0.5" />
+      {[
+        { label: '外資', y: 22, w: 64, buy: true },
+        { label: '投信', y: 44, w: 40, buy: true },
+        { label: '自營', y: 66, w: 26, buy: false },
+        { label: '八大', y: 88, w: 18, buy: true },
+      ].map((r, i) => (
+        <g key={`flow-${i}`}>
+          <text x="0" y={r.y + 9} fill="#cbd5e1" fontSize="8" opacity="0.6">{r.label}</text>
+          <rect
+            x={r.buy ? 78 : 78 - r.w}
+            y={r.y}
+            width={r.w}
+            height="11"
+            rx="2"
+            fill={r.buy ? '#10b981' : '#ef4444'}
+            opacity={r.buy ? 0.4 : 0.38}
+          />
+        </g>
+      ))}
     </g>
-    <text x="445" y="163" fill="#22d3ee" fontSize="8" fontFamily="monospace" opacity="0.3">BOT</text>
-    {/* Volume bars */}
-    {[60, 85, 110, 135, 160, 185, 210, 235, 260, 285, 310, 335].map((x, i) => (
-      <rect key={`vol-${i}`} x={x - 6} y={195 - (10 + Math.random() * 15)} width="12" height={10 + Math.random() * 15} rx="1" fill="#e2a84b" opacity={0.08 + Math.random() * 0.08} />
-    ))}
-    <text x="60" y="210" fill="#e2a84b" fontSize="8" fontFamily="monospace" opacity="0.15">VOL</text>
+
+    {/* Sector heatmap treemap */}
+    <g transform="translate(212, 56)">
+      <text x="0" y="8" fill="#7dd3fc" fontSize="8" fontWeight="700" fontFamily="monospace" opacity="0.7">SECTOR HEATMAP</text>
+      {[
+        { x: 0, y: 14, w: 52, h: 40, up: true, o: 0.34 },
+        { x: 54, y: 14, w: 34, h: 24, up: true, o: 0.22 },
+        { x: 54, y: 40, w: 34, h: 14, up: false, o: 0.26 },
+        { x: 90, y: 14, w: 44, h: 28, up: false, o: 0.32 },
+        { x: 90, y: 44, w: 44, h: 10, up: true, o: 0.18 },
+        { x: 0, y: 56, w: 30, h: 30, up: false, o: 0.2 },
+        { x: 32, y: 56, w: 40, h: 30, up: true, o: 0.4 },
+        { x: 74, y: 56, w: 26, h: 16, up: true, o: 0.16 },
+        { x: 74, y: 74, w: 26, h: 12, up: false, o: 0.22 },
+        { x: 102, y: 56, w: 32, h: 30, up: false, o: 0.3 },
+      ].map((t, i) => (
+        <rect
+          key={`tile-${i}`}
+          x={t.x}
+          y={t.y}
+          width={t.w}
+          height={t.h}
+          rx="1.5"
+          fill={t.up ? '#10b981' : '#ef4444'}
+          opacity={t.o}
+          stroke={t.up ? '#10b981' : '#ef4444'}
+          strokeWidth="0.4"
+          strokeOpacity="0.4"
+        />
+      ))}
+    </g>
+
+    {/* Market regime gauge */}
+    <g transform="translate(440, 60)">
+      <path d="M 8 56 A 44 44 0 0 1 24 22" fill="none" stroke="#ef4444" strokeWidth="5" opacity="0.3" strokeLinecap="round" />
+      <path d="M 24 22 A 44 44 0 0 1 64 22" fill="none" stroke="#f59e0b" strokeWidth="5" opacity="0.3" strokeLinecap="round" />
+      <path d="M 64 22 A 44 44 0 0 1 80 56" fill="none" stroke="#10b981" strokeWidth="5" opacity="0.4" strokeLinecap="round" />
+      {/* needle to risk-on */}
+      <line x1="44" y1="56" x2="66" y2="28" stroke="#34d399" strokeWidth="1.5" opacity="0.85" strokeLinecap="round" />
+      <circle cx="44" cy="56" r="3" fill="#34d399" opacity="0.85" />
+      <text x="44" y="72" textAnchor="middle" fill="#34d399" fontSize="8" fontWeight="700" fontFamily="monospace" opacity="0.8">RISK-ON</text>
+      <text x="44" y="12" textAnchor="middle" fill="#7dd3fc" fontSize="7" fontFamily="monospace" opacity="0.55">REGIME</text>
+    </g>
+
+    {/* Consensus ranking list */}
+    <g transform="translate(212, 150)">
+      <text x="0" y="8" fill="#e2a84b" fontSize="8" fontWeight="700" fontFamily="monospace" opacity="0.7">CONSENSUS · 爆量榜</text>
+      {[
+        { y: 16, code: '2330', tag: '3-way' },
+        { y: 32, code: '2454', tag: 'new' },
+        { y: 48, code: '3231', tag: '2.4× vol' },
+      ].map((r, i) => (
+        <g key={`cons-${i}`}>
+          <circle cx="6" cy={r.y + 5} r="2.5" fill="#10b981" opacity="0.6" />
+          <text x="16" y={r.y + 8} fill="#cbd5e1" fontSize="8" fontFamily="monospace" opacity="0.7">{r.code}</text>
+          <text x="56" y={r.y + 8} fill="#34d399" fontSize="7" fontFamily="monospace" opacity="0.5">{r.tag}</text>
+          <path d={`M 110 ${r.y + 7} L 114 ${r.y + 2} L 118 ${r.y + 7} Z`} fill="#34d399" opacity="0.6" />
+        </g>
+      ))}
+    </g>
+
+    {/* ADL / breadth line across bottom */}
+    <g transform="translate(380, 150)">
+      <text x="0" y="8" fill="#7dd3fc" fontSize="7" fontFamily="monospace" opacity="0.5">BREADTH · ADL</text>
+      <polyline points="0,52 18,46 36,48 54,38 72,40 90,28 108,30 126,20 144,24" fill="none" stroke="#22d3ee" strokeWidth="1.5" opacity="0.45" />
+      <line x1="0" y1="58" x2="150" y2="58" stroke="#475569" strokeWidth="0.5" opacity="0.3" />
+    </g>
+
+    {/* Floating particles */}
+    <g opacity="0.22">
+      <circle cx="370" cy="30" r="1.4" fill="#10b981" />
+      <circle cx="200" cy="40" r="1.1" fill="#22d3ee" />
+      <circle cx="528" cy="150" r="1.3" fill="#7dd3fc" />
+    </g>
+  </svg>
+);
+
+const ClaudeTaskTrackerIllustration: React.FC = () => (
+  <svg viewBox="0 0 560 220" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="oss-g6" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#6366f1" stopOpacity="0.18" />
+        <stop offset="100%" stopColor="#22d3ee" stopOpacity="0.07" />
+      </linearGradient>
+    </defs>
+    <rect width="560" height="220" fill="url(#oss-g6)" />
+
+    {/* VSCode-style window shell */}
+    <rect x="22" y="20" width="516" height="180" rx="8" fill="#0b1020" opacity="0.72" stroke="#6366f1" strokeWidth="0.6" strokeOpacity="0.25" />
+
+    {/* Activity bar */}
+    <rect x="22" y="20" width="26" height="180" rx="8" fill="#11162b" opacity="0.7" />
+    <rect x="22" y="58" width="3" height="20" rx="1.5" fill="#818cf8" opacity="0.9" />
+    {/* tracker icon (active) */}
+    <path d="M 35 64 l 4 -6 l 4 6 l -4 2 z" fill="#818cf8" opacity="0.9" />
+    <circle cx="35" cy="96" r="3.5" fill="#475569" opacity="0.5" />
+    <rect x="31.5" y="120" width="7" height="7" rx="1" fill="#475569" opacity="0.5" />
+    <circle cx="35" cy="150" r="3.5" fill="#475569" opacity="0.5" />
+
+    {/* Tree panel header */}
+    <text x="58" y="40" fill="#a5b4fc" fontSize="8" fontWeight="700" fontFamily="monospace" opacity="0.75">TASKS &amp; SUBAGENTS</text>
+    <line x1="56" y1="46" x2="316" y2="46" stroke="#6366f1" strokeWidth="0.5" opacity="0.2" />
+
+    {/* Tree rows */}
+    <g fontFamily="monospace" fontSize="8">
+      {/* repo */}
+      <text x="58" y="62" fill="#cbd5e1" opacity="0.8">▾ portfolio</text>
+      <text x="118" y="62" fill="#64748b" opacity="0.5">(this window)</text>
+      {/* worktree */}
+      <text x="68" y="78" fill="#94a3b8" opacity="0.7">▾ .worktrees/feat-oss</text>
+      {/* feature: active */}
+      <circle cx="84" cy="90" r="3" fill="#60a5fa" opacity="0.9" />
+      <text x="92" y="93" fill="#cbd5e1" opacity="0.8">add-opensource</text>
+      <text x="186" y="93" fill="#60a5fa" opacity="0.7">▰▰▰▱</text>
+      <text x="220" y="93" fill="#64748b" opacity="0.6">3/4</text>
+      {/* feature: done */}
+      <path d="M 81 104 l 2.5 2.5 l 5 -5.5" fill="none" stroke="#34d399" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" opacity="0.85" />
+      <text x="92" y="109" fill="#cbd5e1" opacity="0.7">rename-cards</text>
+      <text x="186" y="109" fill="#34d399" opacity="0.7">▰▰▰▰</text>
+      <text x="220" y="109" fill="#64748b" opacity="0.6">4/4</text>
+      {/* feature: idle */}
+      <circle cx="84" cy="120" r="3" fill="none" stroke="#94a3b8" strokeWidth="1" opacity="0.5" />
+      <text x="92" y="123" fill="#94a3b8" opacity="0.6">seo-meta</text>
+      <text x="186" y="123" fill="#94a3b8" opacity="0.4">▱▱▱▱</text>
+      <text x="220" y="123" fill="#64748b" opacity="0.5">0/3</text>
+    </g>
+
+    {/* Subagent convergence graph */}
+    <g transform="translate(360, 56)">
+      <text x="0" y="6" fill="#a5b4fc" fontSize="7" fontWeight="700" fontFamily="monospace" opacity="0.65">SUBAGENT CONVERGENCE</text>
+      {/* source subagent nodes */}
+      {[18, 40, 62, 84].map((y, i) => (
+        <g key={`sa-${i}`}>
+          <circle cx="14" cy={y} r="5" fill="#6366f1" opacity={0.3 + i * 0.04} stroke="#818cf8" strokeWidth="0.6" strokeOpacity="0.5" />
+          <line x1="20" y1={y} x2="120" y2="51" stroke="#818cf8" strokeWidth="0.7" opacity="0.28" />
+        </g>
+      ))}
+      {/* converged node */}
+      <circle cx="128" cy="51" r="9" fill="#22d3ee" opacity="0.25" stroke="#22d3ee" strokeWidth="1" strokeOpacity="0.6" />
+      <path d="M 123 51 l 3 3 l 6 -7" fill="none" stroke="#67e8f9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.9" />
+      <text x="128" y="76" textAnchor="middle" fill="#67e8f9" fontSize="7" fontFamily="monospace" opacity="0.6">converged</text>
+    </g>
+
+    {/* Status bar */}
+    <rect x="22" y="182" width="516" height="18" rx="0" fill="#11162b" opacity="0.85" />
+    <rect x="22" y="194" width="516" height="6" fill="transparent" />
+    <path d="M 36 188 l 4 -6 l 4 6 l -4 2 z" fill="#60a5fa" opacity="0.9" />
+    <text x="48" y="194" fill="#93c5fd" fontSize="8" fontFamily="monospace" opacity="0.8">portfolio · active</text>
+    <text x="170" y="194" fill="#64748b" fontSize="8" fontFamily="monospace" opacity="0.6">3/4 todos · 1 subagent</text>
+    <text x="470" y="194" fill="#34d399" fontSize="8" fontFamily="monospace" opacity="0.6">events.jsonl</text>
   </svg>
 );
 
@@ -231,7 +371,7 @@ const SkillPlatformIllustration: React.FC = () => (
   </svg>
 );
 
-const PromptDemoIllustration: React.FC = () => (
+const LumeSpecIllustration: React.FC = () => (
   <svg viewBox="0 0 560 220" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <linearGradient id="oss-g4" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -383,10 +523,11 @@ const PromptDemoIllustration: React.FC = () => (
 );
 
 const ILLUSTRATION_MAP: Record<number, React.FC> = {
-  1: TradingSystemIllustration,
   2: PortfolioIllustration,
   3: SkillPlatformIllustration,
-  4: PromptDemoIllustration,
+  4: LumeSpecIllustration,
+  5: TradeMatrixIllustration,
+  6: ClaudeTaskTrackerIllustration,
 };
 
 const OpenSource: React.FC = () => {
@@ -399,7 +540,7 @@ const OpenSource: React.FC = () => {
             GitHub Projects
           </h2>
           <p className="text-gray-500 font-mono text-sm uppercase tracking-widest reveal">
-            Side projects built with passion — from stock analysis to web design
+            Side projects built with passion — from AI video generation to quant analytics and developer tooling
           </p>
         </div>
 
@@ -435,6 +576,17 @@ const OpenSource: React.FC = () => {
                     >
                       <GitHubIcon className="w-5 h-5" />
                     </a>
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-500 hover:text-emerald-400 transition-colors"
+                        aria-label={`${project.title} live site`}
+                      >
+                        <GlobeIcon className="w-5 h-5" />
+                      </a>
+                    )}
                   </div>
 
                   <p className="text-gray-400 text-sm leading-relaxed mb-6">
@@ -461,15 +613,28 @@ const OpenSource: React.FC = () => {
                         {tech}
                       </span>
                     ))}
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="ml-auto flex items-center gap-1.5 text-xs font-mono text-amber-400/70 hover:text-amber-400 transition-colors group/link"
-                    >
-                      View Source
-                      <ExternalLinkIcon className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
-                    </a>
+                    <div className="ml-auto flex items-center gap-4">
+                      {project.liveUrl && (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1.5 text-xs font-mono text-emerald-400/80 hover:text-emerald-400 transition-colors group/live"
+                        >
+                          Live Demo
+                          <ExternalLinkIcon className="w-3.5 h-3.5 group-hover/live:translate-x-0.5 group-hover/live:-translate-y-0.5 transition-transform" />
+                        </a>
+                      )}
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1.5 text-xs font-mono text-amber-400/70 hover:text-amber-400 transition-colors group/link"
+                      >
+                        View Source
+                        <ExternalLinkIcon className="w-3.5 h-3.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>

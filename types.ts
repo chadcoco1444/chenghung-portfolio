@@ -30,6 +30,7 @@ export interface OpenSourceProject {
   description: string;
   techStack: string[];
   github: string;
+  liveUrl?: string;
   highlights: string[];
 }
 
