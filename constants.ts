@@ -13,6 +13,8 @@ export const PERSONAL_INFO = {
   tagline: 'Senior Firmware Engineer specializing in NR/LTE Cellular Protocol Stack and Embedded Systems Development',
 };
 
+export const WEB3FORMS_ACCESS_KEY = 'd3d4c6f2-ce66-45b5-b17d-000528d71852';
+
 export const PROJECTS: Project[] = [
   {
     id: 1,

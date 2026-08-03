@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { PERSONAL_INFO } from '../constants';
+import { PERSONAL_INFO, WEB3FORMS_ACCESS_KEY } from '../constants';
 
 const Contact: React.FC = () => {
   const [name, setName] = useState('');
@@ -7,20 +7,44 @@ const Contact: React.FC = () => {
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !message.trim()) return;
 
-    const mailtoSubject = encodeURIComponent(subject || `Message from ${name}`);
-    const mailtoBody = encodeURIComponent(
-      `From: ${name}${email ? ` (${email})` : ''}\n\n${message}`
-    );
-    window.open(
-      `mailto:${PERSONAL_INFO.email}?subject=${mailtoSubject}&body=${mailtoBody}`,
-      '_blank'
-    );
-    setSent(true);
+    setSubmitting(true);
+    setError(null);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          name,
+          email,
+          subject: subject || `Message from ${name}`,
+          message,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setSent(true);
+      } else {
+        setError("Couldn't send — check your connection and try again.");
+      }
+    } catch {
+      setError("Couldn't send — check your connection and try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -79,8 +103,8 @@ const Contact: React.FC = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">Email client opened!</h3>
-              <p className="text-gray-400 text-sm mb-6">Please send the email from your mail app to complete.</p>
+              <h3 className="text-xl font-bold text-white mb-2">Message sent!</h3>
+              <p className="text-gray-400 text-sm mb-6">Thanks for reaching out — I'll get back to you soon.</p>
               <button
                 onClick={() => { setSent(false); setName(''); setEmail(''); setSubject(''); setMessage(''); }}
                 className="px-6 py-2 border border-white/10 hover:border-amber-400/50 text-gray-300 hover:text-white rounded-lg text-sm transition-all duration-300"
@@ -96,7 +120,7 @@ const Contact: React.FC = () => {
                   <input
                     type="text"
                     value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    onChange={(e) => { if (error) setError(null); setName(e.target.value); }}
                     required
                     className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-gray-200 placeholder-gray-600 outline-none focus:border-amber-400/40 transition-colors"
                     placeholder="Your name"
@@ -107,7 +131,7 @@ const Contact: React.FC = () => {
                   <input
                     type="email"
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e) => { if (error) setError(null); setEmail(e.target.value); }}
                     className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-gray-200 placeholder-gray-600 outline-none focus:border-amber-400/40 transition-colors"
                     placeholder="your@email.com"
                   />
@@ -118,7 +142,7 @@ const Contact: React.FC = () => {
                 <input
                   type="text"
                   value={subject}
-                  onChange={(e) => setSubject(e.target.value)}
+                  onChange={(e) => { if (error) setError(null); setSubject(e.target.value); }}
                   className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-gray-200 placeholder-gray-600 outline-none focus:border-amber-400/40 transition-colors"
                   placeholder="Project inquiry, collaboration, etc."
                 />
@@ -127,18 +151,22 @@ const Contact: React.FC = () => {
                 <label className="block text-xs text-gray-500 font-mono mb-2 uppercase tracking-wider">Message *</label>
                 <textarea
                   value={message}
-                  onChange={(e) => setMessage(e.target.value)}
+                  onChange={(e) => { if (error) setError(null); setMessage(e.target.value); }}
                   required
                   rows={5}
                   className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-gray-200 placeholder-gray-600 outline-none focus:border-amber-400/40 transition-colors resize-none"
                   placeholder="Tell me about your project or opportunity..."
                 />
               </div>
+              {error && (
+                <p className="text-sm text-red-400 font-mono" role="alert">{error}</p>
+              )}
               <button
                 type="submit"
-                className="w-full btn-amber"
+                disabled={submitting}
+                className="w-full btn-amber disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Message
+                {submitting ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           )}
