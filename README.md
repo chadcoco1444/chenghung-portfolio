@@ -69,7 +69,7 @@ This builds the project and pushes the `dist/` folder to the `gh-pages` branch.
 │   ├── Publications.tsx  # Publications with PDF download
 │   ├── Experience.tsx    # Timeline layout
 │   ├── Skills.tsx        # Skills category grid
-│   └── Contact.tsx       # Contact form (mailto)
+│   └── Contact.tsx       # Contact form (Web3Forms)
 └── public/assets/        # Static files (photos, PDFs)
 ```
 

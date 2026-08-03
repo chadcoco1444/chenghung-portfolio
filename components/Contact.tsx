@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { PERSONAL_INFO, WEB3FORMS_ACCESS_KEY } from '../constants';
 
+const SUBMIT_ERROR_MESSAGE = "Couldn't send — check your connection and try again.";
+
 const Contact: React.FC = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -33,15 +35,17 @@ const Contact: React.FC = () => {
         }),
       });
 
-      const result = await response.json();
+      const result: { success?: boolean; message?: string } = await response.json();
 
       if (response.ok && result.success) {
         setSent(true);
       } else {
-        setError("Couldn't send — check your connection and try again.");
+        console.error('Web3Forms submission failed:', result?.message ?? result);
+        setError(SUBMIT_ERROR_MESSAGE);
       }
-    } catch {
-      setError("Couldn't send — check your connection and try again.");
+    } catch (err) {
+      console.error('Web3Forms submission error:', err);
+      setError(SUBMIT_ERROR_MESSAGE);
     } finally {
       setSubmitting(false);
     }
@@ -127,11 +131,12 @@ const Contact: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs text-gray-500 font-mono mb-2 uppercase tracking-wider">Email</label>
+                  <label className="block text-xs text-gray-500 font-mono mb-2 uppercase tracking-wider">Email *</label>
                   <input
                     type="email"
                     value={email}
                     onChange={(e) => { if (error) setError(null); setEmail(e.target.value); }}
+                    required
                     className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-gray-200 placeholder-gray-600 outline-none focus:border-amber-400/40 transition-colors"
                     placeholder="your@email.com"
                   />
