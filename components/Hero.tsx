@@ -13,22 +13,28 @@ const Hero: React.FC = () => {
         <div className="mb-10 flex justify-center hero-animate">
           <div className="relative group">
             <div className="absolute -inset-1.5 bg-gradient-to-r from-amber-400/60 to-cyan-400/40 rounded-2xl blur opacity-40 group-hover:opacity-70 transition duration-700"></div>
-            <img
-              src={`${import.meta.env.BASE_URL}assets/profile.jpg`}
-              alt={PERSONAL_INFO.name}
-              className="relative w-36 h-36 md:w-44 md:h-44 rounded-2xl object-cover shadow-2xl transition-transform duration-700 group-hover:scale-105"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.style.display = 'none';
-                const parent = target.parentElement;
-                if (parent) {
-                  const fallback = document.createElement('div');
-                  fallback.className = 'relative w-36 h-36 md:w-44 md:h-44 rounded-2xl bg-gradient-to-br from-amber-400 to-cyan-400 flex items-center justify-center text-5xl font-bold text-midnight shadow-2xl';
-                  fallback.textContent = PERSONAL_INFO.name.charAt(0);
-                  parent.appendChild(fallback);
-                }
-              }}
-            />
+            <picture>
+              <source srcSet={`${import.meta.env.BASE_URL}assets/profile.webp`} type="image/webp" />
+              <img
+                src={`${import.meta.env.BASE_URL}assets/profile.jpg`}
+                alt={PERSONAL_INFO.name}
+                width={400}
+                height={558}
+                className="relative w-36 h-36 md:w-44 md:h-44 rounded-2xl object-cover shadow-2xl transition-transform duration-700 group-hover:scale-105"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  const picture = target.parentElement;
+                  const group = picture?.parentElement;
+                  if (picture) picture.style.display = 'none';
+                  if (group) {
+                    const fallback = document.createElement('div');
+                    fallback.className = 'relative w-36 h-36 md:w-44 md:h-44 rounded-2xl bg-gradient-to-br from-amber-400 to-cyan-400 flex items-center justify-center text-5xl font-bold text-midnight shadow-2xl';
+                    fallback.textContent = PERSONAL_INFO.name.charAt(0);
+                    group.appendChild(fallback);
+                  }
+                }}
+              />
+            </picture>
           </div>
         </div>
 
