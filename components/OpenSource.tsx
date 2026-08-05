@@ -1,6 +1,23 @@
 import React from 'react';
 import { OPEN_SOURCE_PROJECTS } from '../constants';
-import { GitHubIcon, ExternalLinkIcon, GlobeIcon, ILLUSTRATION_MAP } from './illustrations/OpenSourceIllustrations';
+import {
+  GitHubIcon,
+  ExternalLinkIcon,
+  GlobeIcon,
+  PortfolioIllustration,
+  SkillPlatformIllustration,
+  LumeSpecIllustration,
+  TradeMatrixIllustration,
+  ClaudeTaskTrackerIllustration,
+} from './illustrations/OpenSourceIllustrations';
+
+const ILLUSTRATION_MAP: Record<number, React.FC> = {
+  2: PortfolioIllustration,
+  3: SkillPlatformIllustration,
+  4: LumeSpecIllustration,
+  5: TradeMatrixIllustration,
+  6: ClaudeTaskTrackerIllustration,
+};
 
 const OpenSource: React.FC = () => {
   return (
@@ -12,7 +29,8 @@ const OpenSource: React.FC = () => {
             GitHub Projects
           </h2>
           <p className="text-gray-500 font-mono text-sm uppercase tracking-widest reveal">
-            Side projects built with passion — from AI video generation to quant analytics and developer tooling
+            Side projects built with passion — from AI video generation to quant analytics and
+            developer tooling
           </p>
         </div>
 

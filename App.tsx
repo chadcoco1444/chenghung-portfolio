@@ -33,18 +33,31 @@ const App: React.FC = () => {
                 }}
               />
               <div className="text-center md:text-left">
-                <h2 className="text-4xl font-bold font-display mb-6 tracking-tight">Professional Profile</h2>
-                <p className="text-xl text-gray-400 leading-relaxed mb-8">
-                  {PERSONAL_INFO.bio}
-                </p>
+                <h2 className="text-4xl font-bold font-display mb-6 tracking-tight">
+                  Professional Profile
+                </h2>
+                <p className="text-xl text-gray-400 leading-relaxed mb-8">{PERSONAL_INFO.bio}</p>
                 <div className="flex flex-wrap justify-center md:justify-start gap-6">
-                  <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors flex items-center gap-2">
+                  <a
+                    href={PERSONAL_INFO.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition-colors flex items-center gap-2"
+                  >
                     <span className="w-1.5 h-1.5 bg-amber-400 rounded-full"></span> LinkedIn
                   </a>
-                  <a href={PERSONAL_INFO.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors flex items-center gap-2">
+                  <a
+                    href={PERSONAL_INFO.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition-colors flex items-center gap-2"
+                  >
                     <span className="w-1.5 h-1.5 bg-cyan-400 rounded-full"></span> GitHub
                   </a>
-                  <a href={`mailto:${PERSONAL_INFO.email}`} className="text-gray-400 hover:text-white transition-colors flex items-center gap-2">
+                  <a
+                    href={`mailto:${PERSONAL_INFO.email}`}
+                    className="text-gray-400 hover:text-white transition-colors flex items-center gap-2"
+                  >
                     <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span> Email
                   </a>
                 </div>
@@ -64,7 +77,9 @@ const App: React.FC = () => {
       <footer className="py-20 border-t border-white/5 text-center text-gray-500 text-sm">
         <div className="max-w-7xl mx-auto px-4">
           <p className="mb-2">&copy; 2026 {PERSONAL_INFO.name}</p>
-          <p className="font-mono text-[10px] opacity-30 uppercase tracking-widest text-amber-400/5">NR/LTE Protocol Stack / Embedded Systems / Firmware Engineering</p>
+          <p className="font-mono text-[10px] opacity-30 uppercase tracking-widest text-amber-400/5">
+            NR/LTE Protocol Stack / Embedded Systems / Firmware Engineering
+          </p>
         </div>
       </footer>
     </div>

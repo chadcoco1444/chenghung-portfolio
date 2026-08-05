@@ -22,7 +22,9 @@ const Navbar: React.FC = () => {
     } else {
       document.body.style.overflow = '';
     }
-    return () => { document.body.style.overflow = ''; };
+    return () => {
+      document.body.style.overflow = '';
+    };
   }, [isOpen]);
 
   return (
@@ -31,13 +33,20 @@ const Navbar: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex-shrink-0 flex items-center gap-4">
-              <span className="text-xl font-bold gradient-text-warm font-mono">&lt;chenghung /&thinsp;&gt;</span>
+              <span className="text-xl font-bold gradient-text-warm font-mono">
+                &lt;chenghung /&thinsp;&gt;
+              </span>
               <div className="hidden sm:flex items-center gap-3 pl-4 border-l border-white/10">
                 <a
                   href={`mailto:${PERSONAL_INFO.email}`}
                   className="flex items-center gap-2 text-xs font-medium text-gray-400 hover:text-amber-400 transition-colors font-mono tracking-wide"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-4 w-4"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                   </svg>
@@ -131,7 +140,12 @@ const Navbar: React.FC = () => {
               onClick={close}
               className="flex items-center gap-2 text-sm text-gray-500 hover:text-amber-400 transition-colors font-mono"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-4 w-4"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
                 <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                 <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
               </svg>

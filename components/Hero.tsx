@@ -5,8 +5,14 @@ const Hero: React.FC = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden data-grid">
       {/* Background halos */}
-      <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-amber-400/10 rounded-full blur-[150px]" style={{ animation: 'hero-glow 6s ease-in-out infinite' }}></div>
-      <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] bg-cyan-400/5 rounded-full blur-[120px]" style={{ animation: 'hero-glow 8s ease-in-out infinite 2s' }}></div>
+      <div
+        className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-amber-400/10 rounded-full blur-[150px]"
+        style={{ animation: 'hero-glow 6s ease-in-out infinite' }}
+      ></div>
+      <div
+        className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] bg-cyan-400/5 rounded-full blur-[120px]"
+        style={{ animation: 'hero-glow 8s ease-in-out infinite 2s' }}
+      ></div>
 
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         {/* Profile Photo */}
@@ -25,7 +31,8 @@ const Hero: React.FC = () => {
                 const parent = target.parentElement;
                 if (parent) {
                   const fallback = document.createElement('div');
-                  fallback.className = 'relative w-36 h-36 md:w-44 md:h-44 rounded-2xl bg-gradient-to-br from-amber-400 to-cyan-400 flex items-center justify-center text-5xl font-bold text-midnight shadow-2xl';
+                  fallback.className =
+                    'relative w-36 h-36 md:w-44 md:h-44 rounded-2xl bg-gradient-to-br from-amber-400 to-cyan-400 flex items-center justify-center text-5xl font-bold text-midnight shadow-2xl';
                   fallback.textContent = PERSONAL_INFO.name.charAt(0);
                   parent.appendChild(fallback);
                 }
@@ -40,7 +47,9 @@ const Hero: React.FC = () => {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
           </span>
-          <span className="font-mono text-xs tracking-wider">Freelance Engineer &bull; Open to Opportunities</span>
+          <span className="font-mono text-xs tracking-wider">
+            Freelance Engineer &bull; Open to Opportunities
+          </span>
         </div>
 
         {/* Heading */}
